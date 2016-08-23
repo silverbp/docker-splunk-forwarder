@@ -6,7 +6,6 @@ ENV PATH /home/fluent/.gem/ruby/2.3.0/bin:$PATH
 USER root
 RUN apk --no-cache --update add sudo build-base ruby-dev && \
 
-    sudo -u fluent gem install fluent-plugin-docker_metadata_filter && \
     sudo -u fluent gem install docker-api && \
     sudo -u fluent gem install lru_redux && \
 
