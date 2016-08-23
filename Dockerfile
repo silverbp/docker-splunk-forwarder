@@ -8,7 +8,9 @@ RUN apk --no-cache --update add sudo build-base ruby-dev && \
 
     sudo -u fluent gem install docker-api && \
     sudo -u fluent gem install lru_redux && \
-
+    mkdir /var/log/fluentd && \
+    chown fluent:fluent /var/log/fluentd && \
+    
     rm -rf /home/fluent/.gem/ruby/2.3.0/cache/*.gem && sudo -u fluent gem sources -c && \
     apk del sudo build-base ruby-dev && rm -rf /var/cache/apk/*
 
